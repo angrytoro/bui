@@ -1,0 +1,34 @@
+{
+  "name": "bui-dpl",
+  "version": "1.1.3",
+  "description": "bui DPL(Design Pattern Library)",
+  "keywords": ["bui", "dpl"],
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/buiteam/bui-dpl.git"
+  },
+  "bugs": {
+    "url": "https://github.com/buiteam/bui-dpl/issues"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.6",
+    "gulp-clean": "^0.3.1",
+    "gulp-concat": "^2.1.7",
+    "gulp-less": "^1.2.3",
+    "gulp-minify-css": "^0.3.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^0.2.1",
+    "through2": "^0.4.1",
+    "gulp-replace" : "^0.3.0"
+  },
+  "licenses": "MIT",
+  "spm": {
+    "main": "css/bs3/bui.css",
+    "output": [
+      "./css/**/*.*",
+      "./img/**/*.*",
+      "./iconfont/**/*.*"
+    ]
+  }
+}

@@ -104,6 +104,7 @@ gulp.task('seed.js', ['package'], function() {
   return gulp.src([
       tmp_distDir + '/seajs/' + dependencies.seajs + '/dist/sea-debug.js',
       './build/config.js',
+      './build/i18n.js',
       './build/common.js'
     ])
     .pipe(concat('seed.js'))
@@ -115,6 +116,7 @@ gulp.task('bui.js', ['package'], function() {
   return gulp.src([
       tmp_distDir + '/seajs/' + dependencies.seajs + '/dist/sea-debug.js',
       './build/config.js',
+      './build/i18n.js',
       './build/common.js',
       './build/data.js',
       './build/list.js',
@@ -195,7 +197,7 @@ gulp.task('assets', function() {
     .pipe(gulp.dest('./build'))
 });
 
-gulp.task('default',['prepare'], /**/ function() {
+gulp.task('default', /**/ function() {
   return gulp.start('package', 'script', 'css', 'assets');
 });
 

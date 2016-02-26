@@ -19,7 +19,5 @@ Thumbs.db
 .build
 node_modules
 _site
-spm_modules
 .cache
 docs
-dist
