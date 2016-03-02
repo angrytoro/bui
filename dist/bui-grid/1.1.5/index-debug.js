@@ -4839,12 +4839,12 @@ gridMenu.ATTRS =
     value : [
       {
         id:ID_SORT_ASC,
-        text:'升序',
+        text:BUI.i18n('ascending'),
         iconCls:'icon-arrow-up'
       },
       {
         id:ID_SORT_DESC,
-        text:'降序',
+        text:BUI.i18n('descending'),
         iconCls : 'icon-arrow-down'
       },
       {
@@ -4852,7 +4852,7 @@ gridMenu.ATTRS =
       },
       {
         id : ID_COLUMNS_SET,
-        text:'设置列',
+        text:BUI.i18n('setColumn'),
         iconCls:'icon-list-alt'
       }
     ]
@@ -5132,14 +5132,14 @@ summary.ATTRS =
    * @default '总汇总'
    */
   summaryTitle : {
-    value : '查询合计'
+    value : BUI.i18n('totalQuery')
   },
   /**
    * 本页汇总的标题
    * @type {String}
    */
   pageSummaryTitle : {
-    value : '本页合计'
+    value : BUI.i18n('pageQuery')
   },
   /**
    * 在列对象中配置的字段

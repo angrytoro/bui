@@ -671,7 +671,7 @@ Tag.ATTRS = {
     value : false
   },
   tagPlaceholder : {
-    value : '输入标签'
+    value : BUI.i18n('inputTag')
   },
   tagFormatter : {
     value : null

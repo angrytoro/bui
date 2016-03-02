@@ -244,28 +244,28 @@ var ImgView = BUI.Component.Controller.extend({
     commands: {
       value: [{
         cmd: 'fitToggle',
-        text: '自动大小'
+        text: BUI.i18n('autoSize')
       },{
         cmd: 'resume',
-        text: '实际大小'
+        text: BUI.i18n('actualSize')
       },{
         cmd: 'fit',
-        text: '适合大小'
+        text:BUI.i18n('fitSize')
       },{
         cmd: 'leftHand',
-        text: '左旋'
+        text: BUI.i18n('leftHand')
       },{
         cmd: 'rightHand',
-        text: '右旋'
+        text: BUI.i18n('rightHand')
       },{
         cmd: 'zoom',
-        text: '放大'
+        text: BUI.i18n('zoom')
       },{
         cmd: 'micrify',
-        text: '缩小'
+        text: BUI.i18n('micrify')
       },{
         cmd: 'viewImg',
-        content: '<a href="#" target="_blank">查看原图</a>'
+        content: '<a href="#" target="_blank">'+BUI.i18n('viewImg')+'</a>'
       }]
     },
     /**

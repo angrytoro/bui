@@ -1027,7 +1027,7 @@ var Queue = SimpleList.extend({
 }, {
   ATTRS: {
     itemTpl: {
-      value: '<li>{resultTpl} <span class="action"><span class="' + CLS_QUEUE_ITEM + '-del">删除</span></span></li>'
+      value: '<li>{resultTpl} <span class="action"><span class="' + CLS_QUEUE_ITEM + '-del">'+BUI.i18n('delBtn')+'</span></span></li>'
     },
     /**
      * 上传结果的模板，可根据上传状态的不同进行设置，没有时取默认的
@@ -1356,7 +1356,7 @@ var Button = Component.Controller.extend({
      */
     text: {
       view: true,
-      value: '上传文件'
+      value: BUI.i18n('uploadFile')
     },
     /**
      * 上传时，提交文件的name值
@@ -1849,7 +1849,7 @@ BUI.extend(AjaxType, UploadType,{
     upload : function(file) {
         //不存在文件信息集合直接退出
         if (!file || !file.file) {
-            BUI.log(LOG_PREFIX + 'upload()，fileData参数有误！');
+            BUI.log(LOG_PREFIX + 'upload()，fileData'+BUI.i18n('paramError'));
             return false;
         }
         var self = this;
@@ -1941,7 +1941,7 @@ BUI.extend(AjaxType, UploadType,{
      */
     _addFileData : function(file) {
         if (!file) {
-            BUI.log(LOG_PREFIX + '_addFileData()，file参数有误！');
+            BUI.log(LOG_PREFIX + '_addFileData()，file'+BUI.i18n('paramError'));
             return false;
         }
         var self = this,
@@ -2091,7 +2091,7 @@ BUI.extend(UploadType, BUI.Base, {
     }else if(BUI.isObject(responseText)){
       result = _self._fromUnicode(responseText);
     }
-    BUI.log('服务器端输出：' + BUI.JSON.stringify(result));
+    BUI.log(BUI.i18n('serverInput') + BUI.JSON.stringify(result));
     return result;
   },
   /**
@@ -2154,7 +2154,7 @@ BUI.extend(FlashType, UploadType, {
     _initSwfUploader:function () {
         var _self = this, swfUploader = _self.get('swfUploader');
         if(!swfUploader){
-            BUI.log(LOG_PREFIX + 'swfUploader对象为空！');
+            BUI.log(LOG_PREFIX + 'swfUploader'+BUI.i18n('objNull'));
             return false;
         }
         //初始化swf时swf已经ready，所以这里直接fire swfReady事件
@@ -2176,7 +2176,7 @@ BUI.extend(FlashType, UploadType, {
                 //文件总共字节数
                 total : ev.bytesTotal
             });
-            BUI.log(LOG_PREFIX + '已经上传字节数为：' + ev.bytesLoaded);
+            BUI.log(LOG_PREFIX + BUI.i18n('uploadCount') + ev.bytesLoaded);
             _self.fire('progress', { 'loaded':ev.loaded, 'total':ev.total });
         });
         //监听文件上传完成事件
@@ -2250,7 +2250,7 @@ BUI.extend(FlashType, UploadType, {
                 url: url[1] + '://' + urlDomain + port + '/crossdomain.xml',
                 dataType:"xml",
                 error:function(){
-                   BUI.log('缺少crossdomain.xml文件或该文件不合法！');
+                   BUI.log(BUI.i18n('fileIllegal'));
                 }
             });
         }
@@ -2430,7 +2430,7 @@ BUI.extend(IframeType, UploadType,{
             doc = iframe.contentDocument || window.frames[iframe.id].document,
             result;
         if (!doc || !doc.body) {
-            self.fire('error', {msg : '服务器端返回数据有问题！'});
+            self.fire('error', {msg : BUI.i18n('serverReturnErr')});
             return false;
         }
         var response = doc.body.innerHTML;
@@ -3762,7 +3762,7 @@ BUI.extend(FlashType, UploadType, {
                 url: url[1] + '://' + urlDomain + port + '/crossdomain.xml',
                 dataType:"xml",
                 error:function(){
-                   BUI.log('缺少crossdomain.xml文件或该文件不合法！');
+                   BUI.log(BUI.i18n('fileIllegal2'));
                 }
             });
         }

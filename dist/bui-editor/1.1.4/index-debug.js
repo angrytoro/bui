@@ -712,14 +712,14 @@ var editor = Editor.extend({
           buttons : [
           {
             btnCls : 'button button-primary',
-            text : '确定',
+            text : BUI.i18n('confirm'),
             handler : function(){
               _self.accept();
             }
           },
           {
             btnCls : 'button',
-            text : '取消',
+            text : BUI.i18n('cancel'),
             handler : function(){
               _self.cancel();
             }

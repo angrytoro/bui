@@ -449,7 +449,7 @@ var dialog = Overlay.extend([UIBase.StdMod,UIBase.Mask,UIBase.Drag],{
   {
     closeTpl:{
       view:true,
-      value : '<a tabindex="0" href=javascript:void("关闭") role="button" class="' + PREFIX + 'ext-close" style=""><span class="' + PREFIX + 'ext-close-x x-icon x-icon-normal">×</span></a>'
+      value : '<a tabindex="0" href=javascript:void("'+BUI.i18n('close')+'") role="button" class="' + PREFIX + 'ext-close" style=""><span class="' + PREFIX + 'ext-close-x x-icon x-icon-normal">×</span></a>'
     },
    /**
      * 弹出库的按钮，可以有多个,有3个参数
@@ -490,7 +490,7 @@ var dialog = Overlay.extend([UIBase.StdMod,UIBase.Mask,UIBase.Drag],{
     buttons:{
       value:[
         {
-          text:'确定',
+          text:BUI.i18n('ensure'),
           elCls : 'button button-primary',
           handler : function(){
             var _self = this,
@@ -500,7 +500,7 @@ var dialog = Overlay.extend([UIBase.StdMod,UIBase.Mask,UIBase.Drag],{
             }
           }
         },{
-          text:'取消',
+          text:BUI.i18n('cancel'),
           elCls : 'button button-primary',
           handler : function(dialog,btn){
             if(this.onCancel() !== false){
@@ -603,7 +603,7 @@ var dialog = Overlay.extend([UIBase.StdMod,UIBase.Mask,UIBase.Drag],{
       value:false
     },
     headerContent:{
-      value:'<div class="' + CLS_TITLE + '">标题</div>'
+      value:'<div class="' + CLS_TITLE + '">'+BUI.i18n('title')+'</div>'
     },
     footerContent:{
 
@@ -833,17 +833,17 @@ function hide(){
 
 
 var Alert = messageFun([{
-        text:'确定',
+        text:BUI.i18n('ensure'),
         elCls : 'button button-primary',
         handler : success
       }
     ],'info'),
   Confirm = messageFun([{
-        text:'确定',
+        text:BUI.i18n('ensure'),
         elCls : 'button button-primary',
         handler : success
       },{
-          text:'取消',
+          text:BUI.i18n('cancel'),
           elCls : 'button',
           handler : hide
         }
