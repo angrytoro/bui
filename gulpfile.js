@@ -56,9 +56,9 @@ function renameFile() {
 //清理目录
 gulp.task('clean', function() {
   return gulp.src([
-      './build',
-      './spm_modules',
-      distDir
+      './build'
+      // './spm_modules',
+      // distDir
     ], {read: false})
     .pipe(clean());
 });
@@ -197,7 +197,7 @@ gulp.task('assets', function() {
     .pipe(gulp.dest('./build'))
 });
 
-gulp.task('default', /**/ function() {
+gulp.task('default', ['clean'], function() {
   return gulp.start('package', 'script', 'css', 'assets');
 });
 

@@ -37,10 +37,10 @@
 			viewImg : "查看原图",
 			close : "关闭",
 			closeOther :"关闭其他",
-			closeAll : "关闭所有"
+			closeAll : "关闭所有",
 			title : "标题",
 			inputTag : "输入标签",
-			refresh : "刷新"
+			refresh : "刷新",
 			homePage : "首 页",
 			prev : "上一页",
 			next : "下一页",
@@ -55,7 +55,7 @@
 			paramError : "参数有误！",
 			serverInput : '服务器端输出：',
 			objNull : "对象为空！",
-			uploadCount : "已经上传字节数为："
+			uploadCount : "已经上传字节数为：",
 			fileIllegal : "缺少crossdomain.xml文件或该文件不合法！",
 			fileIllegal2 : "缺少crossdomain.xml文件或该文件不合法！",
 			serverReturnErr : "服务器端返回数据有问题！",
@@ -66,7 +66,7 @@
 	var current;
 
 	if(typeof window.locale === 'string') {
-		current = i18n[window.locale];
+		current = i18n[window.locale] || {};
 	} else {
 		current = i18n['zh_CN']; //默认是中文
 	}
