@@ -1,7 +1,6 @@
 (function() {
 	var i18n = {
 		'zh_CN': {
-			confirm : "确认",
 			cancel : "取消",
 			inputDifferent  : "两次输入不一致！",
 			notNull : "不能为空！",

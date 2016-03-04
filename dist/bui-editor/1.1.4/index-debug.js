@@ -712,7 +712,7 @@ var editor = Editor.extend({
           buttons : [
           {
             btnCls : 'button button-primary',
-            text : BUI.i18n('confirm'),
+            text : BUI.i18n('ensure'),
             handler : function(){
               _self.accept();
             }
