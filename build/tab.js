@@ -726,7 +726,7 @@ var navTab = Component.Controller.extend(
 
               xclass : 'context-menu-item',
               iconCls:'icon icon-refresh',
-              text : '刷新',
+              text : BUI.i18n('refresh'),
               listeners:{
                 'click':function(){
                   var item = _self.get('showMenuItem');
@@ -740,7 +740,7 @@ var navTab = Component.Controller.extend(
               id : ID_CLOSE,
               xclass : 'context-menu-item',
               iconCls:'icon icon-remove',
-              text: '关闭',
+              text: BUI.i18n('close'),
               listeners:{
                 'click':function(){
                   var item = _self.get('showMenuItem');
@@ -753,7 +753,7 @@ var navTab = Component.Controller.extend(
             {
               xclass : 'context-menu-item',
               iconCls:'icon icon-remove-sign',
-              text : '关闭其他',
+              text : BUI.i18n('closeOther'),
               listeners:{
                 'click':function(){
                   var item = _self.get('showMenuItem');
@@ -766,7 +766,7 @@ var navTab = Component.Controller.extend(
             {
               xclass : 'context-menu-item',
               iconCls:'icon icon-remove-sign',
-              text : '关闭所有',
+              text : BUI.i18n('closeAll'),
               listeners:{
                 'click':function(){
                   _self.closeAll();

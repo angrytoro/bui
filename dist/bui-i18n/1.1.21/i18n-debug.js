@@ -1,7 +1,9 @@
 (function() {
 	var i18n = {
 		'zh_CN': {
-
+			confirm: '确认',
+			confirm_ok: '确认',
+			confirm_submit: '确认',
 			inputDifferent  : "两次输入不一致！",
 			notNull : "不能为空！",
 			inputNotLess : "输入值不能小于{0}！",
@@ -64,7 +66,9 @@
 		}
 	};
     i18n.en = {
-
+    	confirm: 'Confirm',
+		confirm_ok: 'OK',
+		confirm_submit: 'Submit',
         inputDifferent:"The value entered does not match previous one!",
         notNull:"Cannot be empty!",
         inputNotLess:"The value entered does not be less than {0}!",

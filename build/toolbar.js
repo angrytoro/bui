@@ -715,7 +715,7 @@ var PagingBar = Bar.extend([Bindable],
              * @default {String} "首 页"
              */
             firstText:{
-                value:'首 页'
+                value:BUI.i18n('homePage')
             },
             /**
              * the cls of button for first page
@@ -729,7 +729,7 @@ var PagingBar = Bar.extend([Bindable],
              * @default {String} "前一页"
              */
             prevText:{
-                value:'上一页'
+                value:BUI.i18n('prev')
             },
             /**
              * the cls for previous page button
@@ -743,7 +743,7 @@ var PagingBar = Bar.extend([Bindable],
              * @default {String} "下一页"
              */
             nextText:{
-                value:'下一页'
+                value:BUI.i18n('next')
             },
             /**
              * the cls for next page button
@@ -757,7 +757,7 @@ var PagingBar = Bar.extend([Bindable],
              * @default {String} "末 页"
              */
             lastText:{
-                value:'末 页'
+                value:BUI.i18n('LastPage')
             },
             /**
              * the cls for last page button
@@ -771,7 +771,7 @@ var PagingBar = Bar.extend([Bindable],
              * @default {String} "跳 转"
              */
             skipText:{
-                value:'确定'
+                value:BUI.i18n('confirm_ok')
             },
             /**
              * the cls for skip page button
@@ -781,7 +781,7 @@ var PagingBar = Bar.extend([Bindable],
                 value:PREFIX + 'pb-skip'
             },
             refreshText : {
-                value : '刷新'
+                value : BUI.i18n('refresh')
             },
             refreshCls : {
                 value:PREFIX + 'pb-refresh'
@@ -791,22 +791,21 @@ var PagingBar = Bar.extend([Bindable],
              * @default {String} '共 {totalPage} 页'
              */
             totalPageTpl:{
-                value:'共 {totalPage} 页'
+                value:BUI.i18n('totalPage')
             },
             /**
              * the template of current page info
              * @default {String} '第 &lt;input type="text" autocomplete="off" class="bui-pb-page" size="20" name="inputItem"&gt; 页'
              */
             curPageTpl:{
-                value:'第 <input type="text" '+
-                    'autocomplete="off" class="'+PREFIX+'pb-page" size="20" value="{curPage}" name="inputItem"> 页'
+                value:BUI.i18n('noPageA')+'autocomplete="off" class="'+PREFIX+BUI.i18n('noPageB')
             },
             /**
              * the template of total count info
              * @default {String} '共{totalCount}条记录'
              */
             totalCountTpl:{
-                value:'共{totalCount}条记录'
+                value:BUI.i18n('totalRecord')
             },
             autoInitItems : {
                 value : false

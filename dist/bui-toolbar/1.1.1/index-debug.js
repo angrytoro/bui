@@ -771,7 +771,7 @@ var PagingBar = Bar.extend([Bindable],
              * @default {String} "跳 转"
              */
             skipText:{
-                value:BUI.i18n('ensure')
+                value:BUI.i18n('confirm_ok')
             },
             /**
              * the cls for skip page button

@@ -997,6 +997,163 @@ bui_config_110_config_debug = function () {
   }
 }();
 }());
+(function() {
+	var i18n = {
+		'zh_CN': {
+			confirm: '确认',
+			confirm_ok: '确认',
+			confirm_submit: '确认',
+			inputDifferent  : "两次输入不一致！",
+			notNull : "不能为空！",
+			inputNotLess : "输入值不能小于{0}！",
+			inputNotMore : "输入值不能大于{0}！",
+			inputLenght : "输入值长度为{0}！",
+			inputLenNotLess : "输入值长度不小于{0}！",
+			inputLenNotMore : "输入值长度不大于{0}！",
+			inputIllegal  : "输入值不符合{0}！",
+			mailIllegal : "不是有效的邮箱地址！",
+			dateIllegal : "不是有效的日期！",
+			dateNotLess : "输入日期不能小于{0}！",
+			dateNotMore : "输入日期不能大于{0}！",
+			dateInputError : "结束日期不能小于起始日期！",
+			phoneIllegal : "不是有效的手机号码！",
+			numberIllegal : "不是有效的数字！",
+			numberInputError : "结束数字不能小于开始数字！",
+			mustSelectOption : "必须选中{0}项！",
+			pleaseSelect : "请选择",
+			uploadFileError : "上传文件选择有误！",
+			loading : "正在提交。。。",
+			startNotMoreEnd : "开始不能大于结束！",
+			ascending : "升序",
+			descending : "降序",
+			setColumn : "设置列",
+			autoSize : "自动大小",
+			actualSize : "实际大小",
+			fitSize : "适合大小",
+			leftHand : "左旋",
+			rightHand : "右旋",
+			zoom : "放大",
+			micrify : "缩小",
+			viewImg : "查看原图",
+			close : "关闭",
+			closeOther :"关闭其他",
+			closeAll : "关闭所有",
+			title : "标题",
+			inputTag : "输入标签",
+			refresh : "刷新",
+			homePage : "首 页",
+			prev : "上一页",
+			next : "下一页",
+			LastPage : "末 页",
+			ensure : "确定",
+            cancel : "取消",
+			totalPage : "共 {totalPage} 页",
+			noPageA : '第 <input type="text"',
+			noPageB : 'pb-page" size="20" value="{curPage}" name="inputItem"> 页',
+			totalRecord : '共{totalCount}条记录',	
+			delBtn : "删除",
+			uploadFile : "上传文件",
+			paramError : "参数有误！",
+			serverInput : '服务器端输出：',
+			objNull : "对象为空！",
+			uploadCount : "已经上传字节数为：",
+			fileIllegal : "缺少crossdomain.xml文件或该文件不合法！",
+			fileIllegal2 : "缺少crossdomain.xml文件或该文件不合法！",
+			serverReturnErr : "服务器端返回数据有问题！",
+			totalQuery : "查询合计",
+			pageQuery : "本页合计"
+		}
+	};
+    i18n.en = {
+    	confirm: 'Confirm',
+		confirm_ok: 'OK',
+		confirm_submit: 'Submit',
+        inputDifferent:"The value entered does not match previous one!",
+        notNull:"Cannot be empty!",
+        inputNotLess:"The value entered does not be less than {0}!",
+        inputNotMore:"The value entered does not be more than {0}!",
+        inputLenght:"Length of  value entered is {0}!",
+        inputLenNotLess:"Minimum length is {0}!",
+        inputLenNotMore:"Maximum length is {0}!",
+        inputIllegal:"Invaild {0} format!",
+        mailIllegal:"Invaild email address!",
+        dateIllegal:"Invaild date!",
+        dateNotLess : "The date entered cannot be earlier than {0}!",
+        dateNotMore:"The date entered cannot be later than {0}!",
+        dateInputError:"The start date cannot be later than the end date!",
+        phoneIllegal:"Invaild moblie!",
+        numberIllegal:"Invaild number!",
+        numberInputError:"The initial number cannot be greater than the end number!",
+        mustSelectOption:"At least {0} option(s) must be checked!",
+        pleaseSelect:"Choose one...",
+        uploadFileError:"Error uploading file!",
+        loading:"Submitting...",
+        startNotMoreEnd:"The start time cannot be later than the end time!",
+        ascending:"Asc",
+        descending:"Desc",
+        setColumn:"Set column",
+        autoSize:"Auto size",
+        actualSize:"Actual size",
+        fitSize:"Fit size",
+        leftHand:"Anticlockwise",
+        rightHand:"Clockwise",
+        zoom:"Zoom in",
+        micrify:"Zoom out",
+        viewImg:"View image",
+        close:"Close",
+        closeOther:"Close other",
+        closeAll:"Close all",
+        title:"Title",
+        inputTag:"Input Tag",
+        refresh:"Refresh",
+        homePage:"First",
+        prev:"Previous",
+        next:"Next",
+        LastPage:"Last",
+        ensure:"Confirm",
+        cancel:"Cancel",
+        totalPage:"{totalPage} Pages",
+        noPageA:"Page <input type='text'",
+        noPageB: 'pb-page" size="20" value="{curPage}" name="inputItem"> ',
+        totalRecord:"{totalCount}  Records",
+        delBtn:"Delete",
+        uploadFile:"Upload",
+        paramError:"Parameter Error!",
+        serverInput:"Output of server:",
+        objNull:"Object is null!",
+        uploadCount:"Bytes uploaded:",
+        fileIllegal:"Missing crossdomain.xml file or the file is not legal!",
+        fileIllegal2:"Missing crossdomain.xml file or the file is not legal!",
+        serverReturnErr:"The data returned by the server is incorrect!",
+        totalQuery:"Query totals",
+        pageQuery:"Current page totals"
+    };
+
+	var current;
+
+	if(typeof window.locale === 'string') {
+		current = i18n[window.locale] || {};
+	} else {
+		current = i18n['zh_CN']; //默认是中文
+	}
+
+	/**
+	 * 根据传入的key获取相应的key对应的翻译
+	 * @param  {[type]} key [description]
+	 * @return {[type]}     [description]
+	 */
+	BUI.i18n = function(key) {
+		return current[key] || '';
+	};
+
+	/**
+	 * 设置语言
+	 * @param {[type]} language [description]
+	 */
+	BUI.i18n.setLanguage = function(language) {
+		current = i18n[language];
+	};
+})();
 define("bui/common", ["jquery"], function(require, exports, module){
 var BUI = require("bui/common/util");
 
@@ -18073,7 +18230,7 @@ var navTab = Component.Controller.extend(
 
               xclass : 'context-menu-item',
               iconCls:'icon icon-refresh',
-              text : '刷新',
+              text : BUI.i18n('refresh'),
               listeners:{
                 'click':function(){
                   var item = _self.get('showMenuItem');
@@ -18087,7 +18244,7 @@ var navTab = Component.Controller.extend(
               id : ID_CLOSE,
               xclass : 'context-menu-item',
               iconCls:'icon icon-remove',
-              text: '关闭',
+              text: BUI.i18n('close'),
               listeners:{
                 'click':function(){
                   var item = _self.get('showMenuItem');
@@ -18100,7 +18257,7 @@ var navTab = Component.Controller.extend(
             {
               xclass : 'context-menu-item',
               iconCls:'icon icon-remove-sign',
-              text : '关闭其他',
+              text : BUI.i18n('closeOther'),
               listeners:{
                 'click':function(){
                   var item = _self.get('showMenuItem');
@@ -18113,7 +18270,7 @@ var navTab = Component.Controller.extend(
             {
               xclass : 'context-menu-item',
               iconCls:'icon icon-remove-sign',
-              text : '关闭所有',
+              text : BUI.i18n('closeAll'),
               listeners:{
                 'click':function(){
                   _self.closeAll();
@@ -19619,7 +19776,7 @@ var dialog = Overlay.extend([UIBase.StdMod,UIBase.Mask,UIBase.Drag],{
   {
     closeTpl:{
       view:true,
-      value : '<a tabindex="0" href=javascript:void("关闭") role="button" class="' + PREFIX + 'ext-close" style=""><span class="' + PREFIX + 'ext-close-x x-icon x-icon-normal">×</span></a>'
+      value : '<a tabindex="0" href=javascript:void("'+BUI.i18n('close')+'") role="button" class="' + PREFIX + 'ext-close" style=""><span class="' + PREFIX + 'ext-close-x x-icon x-icon-normal">×</span></a>'
     },
    /**
      * 弹出库的按钮，可以有多个,有3个参数
@@ -19660,7 +19817,7 @@ var dialog = Overlay.extend([UIBase.StdMod,UIBase.Mask,UIBase.Drag],{
     buttons:{
       value:[
         {
-          text:'确定',
+          text:BUI.i18n('confirm'),
           elCls : 'button button-primary',
           handler : function(){
             var _self = this,
@@ -19670,7 +19827,7 @@ var dialog = Overlay.extend([UIBase.StdMod,UIBase.Mask,UIBase.Drag],{
             }
           }
         },{
-          text:'取消',
+          text:BUI.i18n('cancel'),
           elCls : 'button button-primary',
           handler : function(dialog,btn){
             if(this.onCancel() !== false){
@@ -19773,7 +19930,7 @@ var dialog = Overlay.extend([UIBase.StdMod,UIBase.Mask,UIBase.Drag],{
       value:false
     },
     headerContent:{
-      value:'<div class="' + CLS_TITLE + '">标题</div>'
+      value:'<div class="' + CLS_TITLE + '">'+BUI.i18n('title')+'</div>'
     },
     footerContent:{
 
@@ -20003,17 +20160,17 @@ function hide(){
 
 
 var Alert = messageFun([{
-        text:'确定',
+        text:BUI.i18n('confirm'),
         elCls : 'button button-primary',
         handler : success
       }
     ],'info'),
   Confirm = messageFun([{
-        text:'确定',
+        text:BUI.i18n('confirm'),
         elCls : 'button button-primary',
         handler : success
       },{
-          text:'取消',
+          text:BUI.i18n('cancel'),
           elCls : 'button',
           handler : hide
         }
@@ -21268,7 +21425,7 @@ var PagingBar = Bar.extend([Bindable],
              * @default {String} "首 页"
              */
             firstText:{
-                value:'首 页'
+                value:BUI.i18n('homePage')
             },
             /**
              * the cls of button for first page
@@ -21282,7 +21439,7 @@ var PagingBar = Bar.extend([Bindable],
              * @default {String} "前一页"
              */
             prevText:{
-                value:'上一页'
+                value:BUI.i18n('prev')
             },
             /**
              * the cls for previous page button
@@ -21296,7 +21453,7 @@ var PagingBar = Bar.extend([Bindable],
              * @default {String} "下一页"
              */
             nextText:{
-                value:'下一页'
+                value:BUI.i18n('next')
             },
             /**
              * the cls for next page button
@@ -21310,7 +21467,7 @@ var PagingBar = Bar.extend([Bindable],
              * @default {String} "末 页"
              */
             lastText:{
-                value:'末 页'
+                value:BUI.i18n('LastPage')
             },
             /**
              * the cls for last page button
@@ -21324,7 +21481,7 @@ var PagingBar = Bar.extend([Bindable],
              * @default {String} "跳 转"
              */
             skipText:{
-                value:'确定'
+                value:BUI.i18n('confirm_ok')
             },
             /**
              * the cls for skip page button
@@ -21334,7 +21491,7 @@ var PagingBar = Bar.extend([Bindable],
                 value:PREFIX + 'pb-skip'
             },
             refreshText : {
-                value : '刷新'
+                value : BUI.i18n('refresh')
             },
             refreshCls : {
                 value:PREFIX + 'pb-refresh'
@@ -21344,22 +21501,21 @@ var PagingBar = Bar.extend([Bindable],
              * @default {String} '共 {totalPage} 页'
              */
             totalPageTpl:{
-                value:'共 {totalPage} 页'
+                value:BUI.i18n('totalPage')
             },
             /**
              * the template of current page info
              * @default {String} '第 &lt;input type="text" autocomplete="off" class="bui-pb-page" size="20" name="inputItem"&gt; 页'
              */
             curPageTpl:{
-                value:'第 <input type="text" '+
-                    'autocomplete="off" class="'+PREFIX+'pb-page" size="20" value="{curPage}" name="inputItem"> 页'
+                value:BUI.i18n('noPageA')+'autocomplete="off" class="'+PREFIX+BUI.i18n('noPageB')
             },
             /**
              * the template of total count info
              * @default {String} '共{totalCount}条记录'
              */
             totalCountTpl:{
-                value:'共{totalCount}条记录'
+                value:BUI.i18n('totalRecord')
             },
             autoInitItems : {
                 value : false
@@ -24048,7 +24204,7 @@ Tag.ATTRS = {
     value : false
   },
   tagPlaceholder : {
-    value : '输入标签'
+    value : BUI.i18n('inputTag')
   },
   tagFormatter : {
     value : null
@@ -26381,7 +26537,7 @@ var rules = {
  */
 var required = rules.add({
   name : 'required',
-  msg : '不能为空！',
+  msg : BUI.i18n('notNull'),
   validator : function(value,required,formatedMsg){
     if(required !== false && /^\s*$/.test(value)){
       return formatedMsg;
@@ -26408,7 +26564,7 @@ var required = rules.add({
  */
 var equalTo = rules.add({
   name : 'equalTo',
-  msg : '两次输入不一致！',
+  msg : BUI.i18n('inputDifferent'),
   validator : function(value,equalTo,formatedMsg){
     var el = $(equalTo);
     if(el.length){
@@ -26435,7 +26591,7 @@ var equalTo = rules.add({
  */
 var min = rules.add({
   name : 'min',
-  msg : '输入值不能小于{0}！',
+  msg : BUI.i18n('inputNotLess'),
   validator : function(value,min,formatedMsg){
     if(BUI.isString(value)){
       value = value.replace(/\,/g,'');
@@ -26465,7 +26621,7 @@ var min = rules.add({
  */
 var max = rules.add({
   name : 'max',
-  msg : '输入值不能大于{0}！',
+  msg : BUI.i18n('inputNotMore'),
   validator : function(value,max,formatedMsg){
     if(BUI.isString(value)){
       value = value.replace(/\,/g,'');
@@ -26488,7 +26644,7 @@ var max = rules.add({
  */
 var length = rules.add({
   name : 'length',
-  msg : '输入值长度为{0}！',
+  msg : BUI.i18n('inputLenght'),
   validator : function(value,len,formatedMsg){
     if(value != null){
       value = $.trim(value.toString());
@@ -26513,7 +26669,7 @@ var length = rules.add({
  */
 var minlength = rules.add({
   name : 'minlength',
-  msg : '输入值长度不小于{0}！',
+  msg : BUI.i18n('inputLenNotLess'),
   validator : function(value,min,formatedMsg){
     if(value != null){
       value = $.trim(value.toString());
@@ -26540,7 +26696,7 @@ var minlength = rules.add({
  */
 var maxlength = rules.add({
   name : 'maxlength',
-  msg : '输入值长度不大于{0}！',
+  msg : BUI.i18n('inputLenNotMore'),
   validator : function(value,max,formatedMsg){
     if(value){
       value = $.trim(value.toString());
@@ -26564,7 +26720,7 @@ var maxlength = rules.add({
  */
 var regexp = rules.add({
   name : 'regexp',
-  msg : '输入值不符合{0}！',
+  msg : BUI.i18n('inputIllegal'),
   validator : function(value,regexp,formatedMsg){
     if(regexp){
       return regexp.test(value) ? undefined : formatedMsg;
@@ -26583,7 +26739,7 @@ var regexp = rules.add({
  */
 var email = rules.add({
   name : 'email',
-  msg : '不是有效的邮箱地址！',
+  msg : BUI.i18n('mailIllegal'),
   validator : function(value,baseValue,formatedMsg){
     value = $.trim(value);
     if(value){
@@ -26604,7 +26760,7 @@ var email = rules.add({
  */
 var date = rules.add({
   name : 'date',
-  msg : '不是有效的日期！',
+  msg : BUI.i18n('dateIllegal'),
   validator : function(value,baseValue,formatedMsg){
     if(BUI.isNumber(value)){ //数字认为是日期
       return;
@@ -26635,7 +26791,7 @@ var date = rules.add({
  */
 var minDate = rules.add({
   name : 'minDate',
-  msg : '输入日期不能小于{0}！',
+  msg : BUI.i18n('dateNotLess'),
   validator : function(value,minDate,formatedMsg){
     if(value){
       var date = toDate(value);
@@ -26665,7 +26821,7 @@ var minDate = rules.add({
  */
 var maxDate = rules.add({
   name : 'maxDate',
-  msg : '输入日期不能大于{0}！',
+  msg : BUI.i18n('dateNotMore'),
   validator : function(value,maxDate,formatedMsg){
     if(value){
       var date = toDate(value);
@@ -26687,7 +26843,7 @@ var maxDate = rules.add({
  */
 var mobile = rules.add({
   name : 'mobile',
-  msg : '不是有效的手机号码！',
+  msg : BUI.i18n('phoneIllegal'),
   validator : function(value,baseValue,formatedMsg){
     value = $.trim(value);
     if(value){
@@ -26708,7 +26864,7 @@ var mobile = rules.add({
  */
 var number = rules.add({
   name : 'number',
-  msg : '不是有效的数字！',
+  msg : BUI.i18n('numberIllegal'),
   validator : function(value,baseValue,formatedMsg){
     if(BUI.isNumber(value)){
       return;
@@ -26772,7 +26928,7 @@ function rangeValid(value,baseValue,formatedMsg,group){
  */
 var dateRange = rules.add({
   name : 'dateRange',
-  msg : '结束日期不能小于起始日期！',
+  msg : BUI.i18n('dateInputError'),
   validator : rangeValid
 });
 
@@ -26794,7 +26950,7 @@ var dateRange = rules.add({
  */
 var numberRange = rules.add({
   name : 'numberRange',
-  msg : '结束数字不能小于开始数字！',
+  msg : BUI.i18n('numberInputError'),
   validator : rangeValid
 });
 
@@ -26859,7 +27015,7 @@ function testCheckRange(value,range){
  */
 var checkRange = rules.add({
   name : 'checkRange',
-  msg : '必须选中{0}项！',
+  msg : BUI.i18n('mustSelectOption'),
   validator : function(record,baseValue,formatedMsg,group){
     var name = getFieldName(group),
       value,
@@ -27708,7 +27864,7 @@ var selectField = Field.extend({
      * @type {String}
      */
     emptyText : {
-      value : '请选择'
+      value : BUI.i18n('pleaseSelect')
     },
     /**
      * 内部的Select控件的配置项
@@ -28556,7 +28712,7 @@ var uploaderField = Field.extend({
 
 Rules.add({
   name : 'uploader',  //规则名称
-  msg : '上传文件选择有误！',//默认显示的错误信息
+  msg : BUI.i18n('uploadFileError'),//默认显示的错误信息
   validator : function(value, baseValue, formatMsg, field){ //验证函数，验证值、基准值、格式化后的错误信息
     var uploader = field.get('uploader');
     if(uploader && !uploader.isValid()){
@@ -29164,7 +29320,7 @@ var Form = FieldContainer.extend({
      */
     submitMask : {
       value : {
-        msg : '正在提交。。。'
+        msg : BUI.i18n('loading')
       }
     },
     /**
@@ -29391,7 +29547,7 @@ var Range = Group.extend({
      * @type {Object}
      */
     rangeText : {
-      value : '开始不能大于结束！'
+      value : BUI.i18n('startNotMoreEnd')
     },
     /**
      * 是否允许前后相等
@@ -30444,14 +30600,14 @@ var editor = Editor.extend({
           buttons : [
           {
             btnCls : 'button button-primary',
-            text : '确定',
+            text : BUI.i18n('confirm'),
             handler : function(){
               _self.accept();
             }
           },
           {
             btnCls : 'button',
-            text : '取消',
+            text : BUI.i18n('cancel'),
             handler : function(){
               _self.cancel();
             }
@@ -35906,12 +36062,12 @@ gridMenu.ATTRS =
     value : [
       {
         id:ID_SORT_ASC,
-        text:'升序',
+        text:BUI.i18n('ascending'),
         iconCls:'icon-arrow-up'
       },
       {
         id:ID_SORT_DESC,
-        text:'降序',
+        text:BUI.i18n('descending'),
         iconCls : 'icon-arrow-down'
       },
       {
@@ -35919,7 +36075,7 @@ gridMenu.ATTRS =
       },
       {
         id : ID_COLUMNS_SET,
-        text:'设置列',
+        text:BUI.i18n('setColumn'),
         iconCls:'icon-list-alt'
       }
     ]
@@ -36199,14 +36355,14 @@ summary.ATTRS =
    * @default '总汇总'
    */
   summaryTitle : {
-    value : '查询合计'
+    value : BUI.i18n('totalQuery')
   },
   /**
    * 本页汇总的标题
    * @type {String}
    */
   pageSummaryTitle : {
-    value : '本页合计'
+    value : BUI.i18n('pageQuery')
   },
   /**
    * 在列对象中配置的字段

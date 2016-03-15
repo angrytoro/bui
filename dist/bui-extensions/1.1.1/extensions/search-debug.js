@@ -16,7 +16,7 @@ BUI.extend(Search, BUI.Base);
 
 Search.ATTRS = {
   tpl: {
-    value: '<p><input type="text" name="key"/> <button class="button button-small">'+BUI.i18n('ensure')+'</button></p>'
+    value: '<p><input type="text" name="key"/> <button class="button button-small">'+BUI.i18n('confirm_ok')+'</button></p>'
   }
 }
 

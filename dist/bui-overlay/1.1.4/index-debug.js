@@ -490,7 +490,7 @@ var dialog = Overlay.extend([UIBase.StdMod,UIBase.Mask,UIBase.Drag],{
     buttons:{
       value:[
         {
-          text:BUI.i18n('ensure'),
+          text:BUI.i18n('confirm'),
           elCls : 'button button-primary',
           handler : function(){
             var _self = this,
@@ -833,13 +833,13 @@ function hide(){
 
 
 var Alert = messageFun([{
-        text:BUI.i18n('ensure'),
+        text:BUI.i18n('confirm'),
         elCls : 'button button-primary',
         handler : success
       }
     ],'info'),
   Confirm = messageFun([{
-        text:BUI.i18n('ensure'),
+        text:BUI.i18n('confirm'),
         elCls : 'button button-primary',
         handler : success
       },{

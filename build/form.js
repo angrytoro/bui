@@ -1769,7 +1769,7 @@ var rules = {
  */
 var required = rules.add({
   name : 'required',
-  msg : '不能为空！',
+  msg : BUI.i18n('notNull'),
   validator : function(value,required,formatedMsg){
     if(required !== false && /^\s*$/.test(value)){
       return formatedMsg;
@@ -1796,7 +1796,7 @@ var required = rules.add({
  */
 var equalTo = rules.add({
   name : 'equalTo',
-  msg : '两次输入不一致！',
+  msg : BUI.i18n('inputDifferent'),
   validator : function(value,equalTo,formatedMsg){
     var el = $(equalTo);
     if(el.length){
@@ -1823,7 +1823,7 @@ var equalTo = rules.add({
  */
 var min = rules.add({
   name : 'min',
-  msg : '输入值不能小于{0}！',
+  msg : BUI.i18n('inputNotLess'),
   validator : function(value,min,formatedMsg){
     if(BUI.isString(value)){
       value = value.replace(/\,/g,'');
@@ -1853,7 +1853,7 @@ var min = rules.add({
  */
 var max = rules.add({
   name : 'max',
-  msg : '输入值不能大于{0}！',
+  msg : BUI.i18n('inputNotMore'),
   validator : function(value,max,formatedMsg){
     if(BUI.isString(value)){
       value = value.replace(/\,/g,'');
@@ -1876,7 +1876,7 @@ var max = rules.add({
  */
 var length = rules.add({
   name : 'length',
-  msg : '输入值长度为{0}！',
+  msg : BUI.i18n('inputLenght'),
   validator : function(value,len,formatedMsg){
     if(value != null){
       value = $.trim(value.toString());
@@ -1901,7 +1901,7 @@ var length = rules.add({
  */
 var minlength = rules.add({
   name : 'minlength',
-  msg : '输入值长度不小于{0}！',
+  msg : BUI.i18n('inputLenNotLess'),
   validator : function(value,min,formatedMsg){
     if(value != null){
       value = $.trim(value.toString());
@@ -1928,7 +1928,7 @@ var minlength = rules.add({
  */
 var maxlength = rules.add({
   name : 'maxlength',
-  msg : '输入值长度不大于{0}！',
+  msg : BUI.i18n('inputLenNotMore'),
   validator : function(value,max,formatedMsg){
     if(value){
       value = $.trim(value.toString());
@@ -1952,7 +1952,7 @@ var maxlength = rules.add({
  */
 var regexp = rules.add({
   name : 'regexp',
-  msg : '输入值不符合{0}！',
+  msg : BUI.i18n('inputIllegal'),
   validator : function(value,regexp,formatedMsg){
     if(regexp){
       return regexp.test(value) ? undefined : formatedMsg;
@@ -1971,7 +1971,7 @@ var regexp = rules.add({
  */
 var email = rules.add({
   name : 'email',
-  msg : '不是有效的邮箱地址！',
+  msg : BUI.i18n('mailIllegal'),
   validator : function(value,baseValue,formatedMsg){
     value = $.trim(value);
     if(value){
@@ -1992,7 +1992,7 @@ var email = rules.add({
  */
 var date = rules.add({
   name : 'date',
-  msg : '不是有效的日期！',
+  msg : BUI.i18n('dateIllegal'),
   validator : function(value,baseValue,formatedMsg){
     if(BUI.isNumber(value)){ //数字认为是日期
       return;
@@ -2023,7 +2023,7 @@ var date = rules.add({
  */
 var minDate = rules.add({
   name : 'minDate',
-  msg : '输入日期不能小于{0}！',
+  msg : BUI.i18n('dateNotLess'),
   validator : function(value,minDate,formatedMsg){
     if(value){
       var date = toDate(value);
@@ -2053,7 +2053,7 @@ var minDate = rules.add({
  */
 var maxDate = rules.add({
   name : 'maxDate',
-  msg : '输入日期不能大于{0}！',
+  msg : BUI.i18n('dateNotMore'),
   validator : function(value,maxDate,formatedMsg){
     if(value){
       var date = toDate(value);
@@ -2075,7 +2075,7 @@ var maxDate = rules.add({
  */
 var mobile = rules.add({
   name : 'mobile',
-  msg : '不是有效的手机号码！',
+  msg : BUI.i18n('phoneIllegal'),
   validator : function(value,baseValue,formatedMsg){
     value = $.trim(value);
     if(value){
@@ -2096,7 +2096,7 @@ var mobile = rules.add({
  */
 var number = rules.add({
   name : 'number',
-  msg : '不是有效的数字！',
+  msg : BUI.i18n('numberIllegal'),
   validator : function(value,baseValue,formatedMsg){
     if(BUI.isNumber(value)){
       return;
@@ -2160,7 +2160,7 @@ function rangeValid(value,baseValue,formatedMsg,group){
  */
 var dateRange = rules.add({
   name : 'dateRange',
-  msg : '结束日期不能小于起始日期！',
+  msg : BUI.i18n('dateInputError'),
   validator : rangeValid
 });
 
@@ -2182,7 +2182,7 @@ var dateRange = rules.add({
  */
 var numberRange = rules.add({
   name : 'numberRange',
-  msg : '结束数字不能小于开始数字！',
+  msg : BUI.i18n('numberInputError'),
   validator : rangeValid
 });
 
@@ -2247,7 +2247,7 @@ function testCheckRange(value,range){
  */
 var checkRange = rules.add({
   name : 'checkRange',
-  msg : '必须选中{0}项！',
+  msg : BUI.i18n('mustSelectOption'),
   validator : function(record,baseValue,formatedMsg,group){
     var name = getFieldName(group),
       value,
@@ -3096,7 +3096,7 @@ var selectField = Field.extend({
      * @type {String}
      */
     emptyText : {
-      value : '请选择'
+      value : BUI.i18n('pleaseSelect')
     },
     /**
      * 内部的Select控件的配置项
@@ -3944,7 +3944,7 @@ var uploaderField = Field.extend({
 
 Rules.add({
   name : 'uploader',  //规则名称
-  msg : '上传文件选择有误！',//默认显示的错误信息
+  msg : BUI.i18n('uploadFileError'),//默认显示的错误信息
   validator : function(value, baseValue, formatMsg, field){ //验证函数，验证值、基准值、格式化后的错误信息
     var uploader = field.get('uploader');
     if(uploader && !uploader.isValid()){
@@ -4552,7 +4552,7 @@ var Form = FieldContainer.extend({
      */
     submitMask : {
       value : {
-        msg : '正在提交。。。'
+        msg : BUI.i18n('loading')
       }
     },
     /**
@@ -4779,7 +4779,7 @@ var Range = Group.extend({
      * @type {Object}
      */
     rangeText : {
-      value : '开始不能大于结束！'
+      value : BUI.i18n('startNotMoreEnd')
     },
     /**
      * 是否允许前后相等
