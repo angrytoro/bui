@@ -890,14 +890,14 @@ var Res = {
 	},
 
 	setLanguage: function  (type) {
-	   if (Res[type]) {
-	   	 BUI.mix(this,Res[type]);
-	   }
-	}
-	
+    if (type === 'zh_CN') type = 'zh-CN';
+    if (Res[type]) {
+      BUI.mix(this,Res[type]);
+    }
+  }
+  
 };
-
-Res.setLanguage('zh-CN');
+Res.setLanguage((typeof window.locale === 'string' && window.locale) || 'zh-CN');
 module.exports = Res;
 });
 define("bui-calendar/1.1.5/src/header-debug", ["jquery","bui-common/1.1.6/common-debug"], function(require, exports, module){
